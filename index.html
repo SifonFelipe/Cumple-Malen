@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Feliz cumple!</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.7/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.7/brython_stdlib.min.js"></script>
+</head>
+
+
+<body onload="brython()">
+
+    <h1 id="titulo-inicial">Feliz cumpleaños Malén!</h1>
+    <p id='texto'>Primero de todo feliz cumpleaños!, ahora vas a ver fotos y preguntas para ver fotos jaja </p>
+    <p>Primer quiz; Qué hace Felipe en las mayorías de fotos?</p>
+    <input type='button' id='answer1quiz1' value='Levanta el brazo' class='respuestas_primer_multiple_choice' />
+    <input type='button' id='answer2quiz1' value='Hace caras graciosas' class='respuestas_primer_multiple_choice' />
+    <input type='button' id='answer3quiz1' value='Se come una chocotorta' class='respuestas_primer_multiple_choice' />
+    <input type='button' id='answer4quiz1' value='Se acomoda el pelo' class='respuestas_primer_multiple_choice' />
+    <div id='quiz1_images'></div>
+    <div id='quiz1_images1'></div>
+    <div id='quiz1_images2'></div>
+    <div id='quiz1_images3'></div>
+
+    <script type="text/python">
+        import random
+
+        from browser import document
+        from browser import bind
+        from browser import alert
+
+        @bind(document['answer1quiz1'], 'click')
+        @bind(document['answer3quiz1'], 'click')
+        @bind(document['answer4quiz1'], 'click')
+        def wrong_answer(e):
+            alert('Esta respuesta esta mal...pero hay intentos infinitos!')
+        
+        @bind(document['answer2quiz1'], 'click')
+        def right_answer(e):
+            alert('Perfecto!! ahora podes ver mas fotos!')
+            document['quiz1_images'].html = "<img src='image10.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz1_images1'].html = "<img src='image20.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz1_images2'].html = "<img src='image39.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz1_images3'].html = "<img src='image46.jpg' style='max-height: 500px; max-width: 400px' />"
+
+    </script>
+</body>
+</html>
