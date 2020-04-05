@@ -8,18 +8,24 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.7/brython_stdlib.min.js"></script>
 
     <style>
-    .respuestas_primer_multiple_choice {
+    .respuestas_multiple_choice {
         font-size: 16px;
-        color:rgb(6, 102, 3);
-        background-color: rgb(184, 241, 172);
+        color:rgb(13, 127, 235);
+        background-color: rgb(174, 235, 235);
         border-color:rgb(192, 245, 227);
         font-family: 'Ubuntu';
         border-style: ridge;
     }
 
     .textos {
-        font-size: 14px;
+        font-size: 16px;
         color: red;
+        font-family: 'Ubuntu';
+    }
+
+    .titulos {
+        font-size: 20px;
+        color:blue;
     }
     </style>
 </head>
@@ -27,16 +33,50 @@
 <body onload="brython()">
 
     <h1 id="titulo-inicial">Feliz cumpleaños Malén!</h1>
-    <p class='textos'> Primero de todo feliz cumpleaños!, ahora vas a ver fotos y preguntas para ver fotos jaja </p>
+    <p class='titulos'> Primero de todo feliz cumpleaños!, ahora vas a ver fotos y preguntas para ver fotos jaja </p>
     <p class='textos'>Primer quiz; Qué hace Felipe en las mayorías de fotos?</p>
-    <input type='button' id='answer1quiz1' value='Levanta el brazo' class='respuestas_primer_multiple_choice' />
-    <input type='button' id='answer2quiz1' value='Hace caras graciosas' class='respuestas_primer_multiple_choice' />
-    <input type='button' id='answer3quiz1' value='Se come una chocotorta' class='respuestas_primer_multiple_choice' />
-    <input type='button' id='answer4quiz1' value='Se acomoda el pelo' class='respuestas_primer_multiple_choice' />
+    <input type='button' id='answer1quiz1' value='Levanta el brazo' class='respuestas_multiple_choice' />
+    <input type='button' id='answer2quiz1' value='Hace caras graciosas' class='respuestas_multiple_choice' />
+    <input type='button' id='answer3quiz1' value='Se come una chocotorta' class='respuestas_multiple_choice' />
+    <input type='button' id='answer4quiz1' value='Se acomoda el pelo' class='respuestas_multiple_choice' />
     <div id='quiz1_images'></div>
     <div id='quiz1_images1'></div>
     <div id='quiz1_images2'></div>
     <div id='quiz1_images3'></div>
+    <p class='textos'>Segundo quiz; Quién es la persona que siempre quiere sacar fotos?</p>
+    <input type='button' id='answer1quiz2' value='Juan' class='respuestas_multiple_choice' />
+    <input type='button' id='answer2quiz2' value='Felipe' class='respuestas_multiple_choice' />
+    <input type='button' id='answer3quiz2' value='Pancha' class='respuestas_multiple_choice' />
+    <input type='button' id='answer4quiz2' value='Diana' class='respuestas_multiple_choice' />
+    <div id='quiz2_images'></div>
+    <div id='quiz2_images1'></div>
+    <div id='quiz2_images2'></div>
+    <div id='quiz2_images3'></div>
+    <div id='quiz2_images4'></div>
+    <div id='quiz2_images5'></div>
+    <div id='quiz2_images6'></div>
+
+    <p class='titulos'>Fotos Graciosas:</p>
+    <img src='image34.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image35.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image22.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image11.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image1.jpg' style='max-height: 500px; max-width: 400px' />
+    <p class='titulos'>Fotas tuyas de chiquita:</p>
+    <img src='image4.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image28.jpg' style='max-height: 500px; max-width: 400px' />
+    <p class='titulos'>Fotos familiares:</p>
+    <img src='image9.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image19.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image25.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image31.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image33.jpg' style='max-height: 500px; max-width: 400px' />
+    <p class='titulos'>Fotos tuyas con Cesar:</p>
+    <img src='image44.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image42.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image40.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image36.jpg' style='max-height: 500px; max-width: 400px' />
+    <img src='image16.jpg' style='max-height: 500px; max-width: 400px' />
 
     <script type="text/python">
         import random
@@ -58,6 +98,26 @@
             document['quiz1_images1'].html = "<img src='image20.jpg' style='max-height: 500px; max-width: 400px' />"
             document['quiz1_images2'].html = "<img src='image39.jpg' style='max-height: 500px; max-width: 400px' />"
             document['quiz1_images3'].html = "<img src='image46.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['answer1quiz2'], 'click')
+        @bind(document['answer2quiz2'], 'click')
+        def wrongg_answer(e):
+            alert('mmm...esta mal, pero hay intentos infinitos!')
+
+        @bind(document['answer3quiz2'], 'click')
+        def jajajaj(e):
+            alert('como la pancha va a querer sacarse una foto???jajaja')
+
+        @bind(document['answer4quiz2'], 'click')
+        def correct(e):
+            alert('Bien! ahora vas a poder ver mas fotos!')
+            document['quiz2_images'].html = "<img src='image14.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz2_images1'].html = "<img src='image18.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz2_images2'].html = "<img src='image24.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz2_images3'].html = "<img src='image25.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz2_images4'].html = "<img src='image32.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz2_images5'].html = "<img src='image37.jpg' style='max-height: 500px; max-width: 400px' />"
+            document['quiz2_images6'].html = "<img src='image45.jpg' style='max-height: 500px; max-width: 400px' />"
 
     </script>
 </body>
