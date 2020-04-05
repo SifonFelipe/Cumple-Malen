@@ -6,14 +6,29 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.7/brython.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.7/brython_stdlib.min.js"></script>
-</head>
 
+    <style>
+    .respuestas_primer_multiple_choice {
+        font-size: 16px;
+        color:rgb(6, 102, 3);
+        background-color: rgb(184, 241, 172);
+        border-color:rgb(192, 245, 227);
+        font-family: 'Ubuntu';
+        border-style: ridge;
+    }
+
+    .textos {
+        font-size: 14px;
+        color: red;
+    }
+    </style>
+</head>
 
 <body onload="brython()">
 
     <h1 id="titulo-inicial">Feliz cumpleaños Malén!</h1>
-    <p id='texto'>Primero de todo feliz cumpleaños!, ahora vas a ver fotos y preguntas para ver fotos jaja </p>
-    <p>Primer quiz; Qué hace Felipe en las mayorías de fotos?</p>
+    <p class='textos'> Primero de todo feliz cumpleaños!, ahora vas a ver fotos y preguntas para ver fotos jaja </p>
+    <p class='textos'>Primer quiz; Qué hace Felipe en las mayorías de fotos?</p>
     <input type='button' id='answer1quiz1' value='Levanta el brazo' class='respuestas_primer_multiple_choice' />
     <input type='button' id='answer2quiz1' value='Hace caras graciosas' class='respuestas_primer_multiple_choice' />
     <input type='button' id='answer3quiz1' value='Se come una chocotorta' class='respuestas_primer_multiple_choice' />
