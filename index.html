@@ -66,6 +66,11 @@
     <input type='button' id='answer3quiz4' value='Muchísimo!' class='respuestas_multiple_choice' />
     <div id='quiz4_images1'></div>
 
+    <p class='textos'>Último quiz; La mejor hermana del mundo vive en...</p>
+    <input type='text' id='answer-quiz5' />
+    <input type='button' id='check-quiz5' value='Probar' class='respuestas_multiple_choice' />
+    <div id='quiz5_images1'></div>
+
 
     <p class='titulos'>Fotos Graciosas:</p>
     <img src='image34.jpg' style='max-height: 500px; max-width: 400px' />
@@ -150,8 +155,16 @@
             alert(':) :) :) :)')
             document['quiz4_images1'].html = "<img src='image47.jpg' style='max-height: 500px; max-width: 400px' />"
 
-
-
+        @bind(document['check-quiz5'], 'click')
+        def quiz5_check(e):
+            answer = document['answer-quiz5'].value.lower().strip()
+            if answer == 'uruguay':
+                alert('Casi! pero tenés que ser un poco más específica')
+            elif answer == 'punta del diablo':
+                alert('Correcto!!! :)')
+                document['quiz5_images1'].html = "<img src='image3.jpg' style='max-height: 500px; max-width: 400px' />"
+            else:
+                alert('Mmmmmm, no, seguí intentando')
     </script>
 </body>
 </html>
