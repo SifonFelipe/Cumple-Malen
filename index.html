@@ -55,6 +55,17 @@
     <div id='quiz2_images4'></div>
     <div id='quiz2_images5'></div>
     <div id='quiz2_images6'></div>
+    <p class='textos'>Tercer quiz; Una adivinanza! y de tu autoría :D. "Rueda no es la silla..."</p>
+    <input type='button' id='answer1quiz3' value='El vaso' class='respuestas_multiple_choice' />
+    <input type='button' id='answer2quiz3' value='El lápiz' class='respuestas_multiple_choice' />
+    <input type='button' id='answer3quiz3' value='La computadora' class='respuestas_multiple_choice' />
+    <div id='quiz3_images1'></div>
+    <p class='textos'>Cuarto quiz; Tus hermanos te quieren...</p>
+    <input type='button' id='answer1quiz4' value='Poco' class='respuestas_multiple_choice' />
+    <input type='button' id='answer2quiz4' value='Más o menos' class='respuestas_multiple_choice' />
+    <input type='button' id='answer3quiz4' value='Muchísimo!' class='respuestas_multiple_choice' />
+    <div id='quiz4_images1'></div>
+
 
     <p class='titulos'>Fotos Graciosas:</p>
     <img src='image34.jpg' style='max-height: 500px; max-width: 400px' />
@@ -118,6 +129,28 @@
             document['quiz2_images4'].html = "<img src='image32.jpg' style='max-height: 500px; max-width: 400px' />"
             document['quiz2_images5'].html = "<img src='image37.jpg' style='max-height: 500px; max-width: 400px' />"
             document['quiz2_images6'].html = "<img src='image45.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['answer1quiz3'], 'click')
+        @bind(document['answer3quiz3'], 'click')
+        def quiz3_wrong(e):
+            alert('mal mal, muy mal, seguí intentando!')
+
+        @bind(document['answer2quiz3'], 'click')
+        def quiz3_correct(e):
+            alert('bien!!! genial adivinanza, todo el sentido')
+            document['quiz3_images1'].html = "<img src='image46.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['answer1quiz4'], 'click')
+        @bind(document['answer2quiz4'], 'click')
+        def quiz4_wrong(e):
+            alert('en serio??? mal!')
+
+        @bind(document['answer3quiz4'], 'click')
+        def quiz4_correct(e):
+            alert(':) :) :) :)')
+            document['quiz4_images1'].html = "<img src='image47.jpg' style='max-height: 500px; max-width: 400px' />"
+
+
 
     </script>
 </body>
